@@ -3,14 +3,16 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import LandingPage from './components/LandingPage'
+import IntroPage from './components/IntroPage'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div className='app-container'>
       <LandingPage />
-    </>
+      <IntroPage />
+    </div>
+ 
   )
 }
 
