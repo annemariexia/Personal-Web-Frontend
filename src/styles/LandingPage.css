@@ -28,10 +28,11 @@
 }
 
 
-h1 {
+.slide-in {
     position: absolute;
-    top: 24vh;
-    left: 38%;
+    top: 28vh;
+    left: 92vh;
+    white-space: nowrap;
     display: inline-block;
     font-size: 3.2em;
     line-height: 1.1;
@@ -67,6 +68,9 @@ h1 {
     left: 0;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+
 }
 
 @keyframes blinking{ 
@@ -101,10 +105,10 @@ h1 {
 .icon-box{
     padding: 1rem;
     top: 38%;
-    left: 118vh;
+    left: 110vh;
     width: 20vw;
     display: flex;
-    justify-content: baseline;
+    justify-content: center;
     position: absolute;
     transform: translate(50%, -50%);
     gap: 0.5rem;
@@ -121,4 +125,13 @@ h1 {
 .github-icon {
     width: 25px;
     height: 25px;
+}
+
+.photo {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 3rem;
+    position: absolute;
+    top: 25vh;
+    left: 28vh;
 }

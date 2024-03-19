@@ -3,12 +3,13 @@ import Arrow from "../assets/arrow-down.svg"
 import Linkedin from "../assets/linkedin-icon.svg"
 import Instagram from "../assets/instagram-icon.svg"
 import Github from "../assets/github-icon.svg"
+import Photo from "../assets/head-shot.jpeg"
 
 const LandingPage = () => {
     return (
         <div className="landing-page">
-            
-            <h1 className="text">Hi, I'm Annemarie.</h1>
+            <img src={Photo} className="photo"/>
+            <h1 className="slide-in">Hi, I'm Annemarie.</h1>
             <h3 className="typed-out">I'm a fullstack developer, climber, and coffee connoisseur.</h3>
             <div className="icon-box">
                 <a href="https://www.linkedin.com/in/annemarie-x-xia/"><img src={Linkedin} alt="Linkedin" className="linkedin-icon" /></a>
