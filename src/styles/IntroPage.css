@@ -11,4 +11,17 @@
 
 .intro-title {
     color: #213547;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+
+
+.grad-photo {
+    position: absolute;
+    top: 10%;
+    left: 6%;
+    height: 80%;
+    border-radius: 0.5rem;
+    transform: translate(5%, 5%);
 }
