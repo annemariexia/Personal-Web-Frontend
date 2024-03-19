@@ -131,7 +131,7 @@
     height: 5rem;
     width: 5rem;
     border-radius: 3rem;
-    position: absolute;
-    top: 25vh;
-    left: 28vh;
+    position: relative;
+    top: 13vw;
+    right: 30vw;
 }
