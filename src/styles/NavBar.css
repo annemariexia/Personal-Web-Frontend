@@ -1,6 +1,4 @@
-nav {
-    display: flex;
-    justify-content: flex-end;
+#menu {
     padding: 0 2rem;
     position: fixed;
     top: 0;
@@ -9,12 +7,14 @@ nav {
     perspective: 2000px;
     flex-wrap: wrap;
     width: 100%;
-    gap: 2.5rem;
+    height: 3.25rem;
+    gap: 3rem;
     background-color: #213547;
+    display: flex;
+    align-items: center;
 }
 
 nav .menu-item {
-    padding-top: 0.5rem;
     color: white;
     font-weight: 600;
     display: flex;
@@ -57,10 +57,37 @@ nav .menu-text a:hover {
         opacity: 1;        
     }
 }
+.menu-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    position: absolute;
+    right: 0;
+    margin-right: 1.75rem;
+}
 
 /* Menu specific */
 .menu-item .title {
     font-weight: 500;
     color: rgb(44 70 86);
     margin: 0 0 0.25em 0;
+}
+
+.icon-box{
+    max-height: 2rem;
+    position: absolute;
+    margin-left: 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+
+.linkedin-icon, .github-icon, .instagram-icon {
+    height: 2rem;
+    border-radius: 15%;
 }
