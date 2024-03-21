@@ -5,61 +5,53 @@
     background-color: whitesmoke;
     width: 100%;
     height: 200%;
-    display: flex;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
 }
 
-.intro {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: whitesmoke;
-    width: 100%;
-    height: 100vh;
-    display: flexbox;
-    justify-content: baseline;
-}
 
 .intro-title {
     color: #213547;
-    position: absolute;
     right: 5%;
+    font-size: 2.5rem;
 }
 
 .subtitle {
     color: #213547;
-    position: absolute;
-    left: 40%;
-    top: 13%;
-    text-decoration: dotted overline;
+    font-size: 1.75rem;
+    text-align: left;
 }
 
 
 .grad-photo {
-    position: absolute;
     top: 10%;
     left: 6%;
-    height: 80%;
+    width: 80%;
     border-radius: 0.5rem;
-    transform: translate(5%, 5%);
 }
 
-.education-background {
-    position: absolute;
-    left: 40%;
-    top: 22.5%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
+
+
 
 .education-background>p {
-    font-size: 0.8rem;
+    font-size: 1.25rem;
     text-align: left;
     margin: 0;
-    padding-top: 0.75rem;
+    padding: 0.75rem 0;
 }
 
-/* strong {
-    font-weight: 500;
-} */
+.text-box{
+    display: flexbox;
+    flex-direction: column;
+    padding: 0 1rem;
+    background-color: rgb(151, 184, 212);
+    margin-top: 4rem;
+    margin-right: 5rem;
+}
+
+
+.photo-box{
+    margin-top: 4rem;
+    margin-left: 5rem;
+    background-color: #213547;
+}

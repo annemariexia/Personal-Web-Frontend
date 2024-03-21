@@ -26,12 +26,12 @@ nav .menu-item {
 }
 
 nav .menu-text, nav .menu-text a {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     color: white;
     text-shadow: 0 1px 5px rgba(0,0,0,0.1);
     transition: color 0.1s ease-out;
     text-align: center;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 nav .menu-text a:hover {
@@ -39,7 +39,7 @@ nav .menu-text a:hover {
 }
 
 
-.menu-item:hover {
+.menu-item a:hover {
     bottom: 0.5em;
     opacity: 1;
     transition: bottom 0.25s ease-out, opacity 0.01s ease-out 0.15s;
@@ -84,10 +84,23 @@ nav .menu-text a:hover {
     display: flex;
     justify-content: center;
     gap: 1rem;
+    animation: fadeIn 2s forwards;
+    animation-delay: 3.5s;
+    opacity: 0;
 }
 
 
 .linkedin-icon, .github-icon, .instagram-icon {
     height: 2rem;
     border-radius: 15%;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
