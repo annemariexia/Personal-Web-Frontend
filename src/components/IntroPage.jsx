@@ -7,7 +7,7 @@ const IntroPage = () => {
         <div className="intro">
           <h1 className="intro-title">About Me</h1>
           
-          <h3 className="subtitile">CS and CS: Harmonizing Tech and Thought</h3>
+          <h3 className="subtitle">CS and CS: Harmonizing Tech and Thought</h3>
           <section className="education-background">
             <p>I graduated from UC Davis with a BS in <strong>C</strong>omputer <strong>S</strong>cience and <strong>C</strong>ognitive <strong>S</strong>cience. </p>
             <p>Delving into the intricacies of the human mind while navigating the dynamic world of technology has enabled me to approach problems from multiple angles, blending analytical thinking with an understanding of human-centered design principles.</p>
