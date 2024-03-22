@@ -11,8 +11,8 @@
 }
 
 @keyframes typing {
-    from { width: 0% }
-    to { width: 72% }
+    from { width: 0 }
+    to { width: 55rem }
 }
 
 @keyframes slide-right {
@@ -52,12 +52,12 @@
 	margin: 0;
 	opacity: 0;
 	animation: slideIn 0.8s ease-in forwards;
+    text-shadow: 0.1rem 0.1rem 0.15rem rgb(48, 152, 243);
  
 }
 
 
 .typed-out{
-    /* text-shadow: 0.1rem 0.1rem 0.15rem rgb(48, 152, 243); */
     position: absolute;
     top: 45%;
     left: 50%;
