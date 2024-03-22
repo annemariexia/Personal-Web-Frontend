@@ -10,6 +10,20 @@
 
 }
 
+.blur {
+    filter: blur(0);
+    animation: blurAnimation 0.2s ease-in-out forwards;
+}
+
+@keyframes blurAnimation {
+    from {
+        filter: blur(0);
+    }
+    to {
+        filter: blur(0.75rem);
+    }
+}
+
 @keyframes typing {
     from { width: 0 }
     to { width: 55rem }
