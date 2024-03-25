@@ -6,14 +6,10 @@ import React, { useState, useEffect } from 'react';
 
 const LandingPage = () => {
 
-    const [isScrolled, setIsScrolled] = useState(false);
     const [lastScrollTop, setLastScrollTop] = useState(0);
-
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;  // number of pixels measured from vertical scroll
-
-            setIsScrolled(scrollTop > lastScrollTop);
             setLastScrollTop(scrollTop <= 0 ? 0 : scrollTop);
         };
 
@@ -25,7 +21,7 @@ const LandingPage = () => {
     }, [lastScrollTop])
 
     return (
-        <div className={`landing-page ${isScrolled ? 'blur' : ''}`}>
+        <div className="landing-page" style={{ filter: `blur(${lastScrollTop / 200}rem)` }}>
             <div className="photo">
                 <img src={Photo} className="photo"/>
             </div>

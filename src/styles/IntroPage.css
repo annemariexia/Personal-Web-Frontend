@@ -5,18 +5,29 @@
     background-color: whitesmoke;
     width: 100%;
     height: 200%;
+    display: flex;
+    flex-direction: column;
+    /* display: grid;
+    grid-template-columns: 1fr 2fr; */
+}
+
+.card-1-2 {
     display: grid;
     grid-template-columns: 1fr 2fr;
 }
 
+.card-2-1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
 
-.intro-title {
+.card-1-2 .intro-title {
     color: #213547;
     right: 5%;
     font-size: 2.5rem;
 }
 
-.subtitle {
+.card-1-2 .subtitle {
     color: #213547;
     font-size: 1.75rem;
     text-align: left;
@@ -25,24 +36,22 @@
 }
 
 
-.grad-photo {
-    top: 10%;
-    left: 6%;
+.card-1-2 .grad-photo {
+    top: 10rem;
+    left: 6rem;
     width: 80%;
     border-radius: 0.5rem;
 }
 
 
-
-
-.education-background>p {
+.card-1-2 .education-background>p {
     font-size: 1.25rem;
     text-align: left;
     margin: 0;
     padding: 0.75rem 0;
 }
 
-.text-box{
+.card-1-2 .text-box{
     display: flexbox;
     flex-direction: column;
     padding: 0 1rem;
@@ -52,11 +61,66 @@
 }
 
 
-.photo-box{
+.card-1-2 .photo-box{
     margin-top: 5rem;
+    margin-bottom: 0;
     margin-left: 5rem;
     /* background-color: #213547; */
 }
+
+
+
+
+
+
+.card-2-1  .intro-title {
+    color: #213547;
+    right: 5%;
+    font-size: 2.5rem;
+}
+
+.card-2-1 .subtitle {
+    color: #213547;
+    font-size: 1.75rem;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+
+.card-2-1 .grad-photo {
+    top: 10rem;
+    left: 6rem;
+    width: 80%;
+    border-radius: 0.5rem;
+}
+
+
+.card-2-1 .education-background>p {
+    font-size: 1.25rem;
+    text-align: left;
+    margin: 0;
+    padding: 0.75rem 0;
+}
+
+.card-2-1 .text-box{
+    display: flexbox;
+    flex-direction: column;
+    padding: 0 1rem;
+    /* background-color: rgb(151, 184, 212); */
+    margin-top: 7rem;
+    margin-left: 5rem;
+}
+
+
+.card-2-1 .photo-box{
+    margin-top: 5rem;
+    margin-bottom: 0;
+    margin-right: 5rem;
+    /* background-color: #213547; */
+}
+
+
 
 .grad-photo {
     height: 30rem;
