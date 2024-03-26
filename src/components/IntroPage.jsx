@@ -1,8 +1,28 @@
 import "../styles/IntroPage.css";
 import GradHeadShot from "../assets/grad-photo.jpeg";
 import ClimbingPhoto from "../assets/climbing_3.jpg";
+import React, { useRef, useEffect, useState } from "react";
+import mapboxgl from "mapbox-gl";
+
+
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN;
 
 const IntroPage = () => {
+  const mapContainer = useRef(null);
+  const map = useRef(null);
+
+
+  useEffect(() => {
+    if (map.current) return;
+    map.current = new mapboxgl.Map({
+      container: mapContainer.current,
+      style: "mapbox://styles/mapbox/streets-v12",
+      center: [-70.9, 42.35],
+      zoom: 9,
+      attributionControl: false,
+    });
+  });
+
   return (
     <div className="intro-page">
       <div className="card-1-2">
@@ -17,10 +37,10 @@ const IntroPage = () => {
               Cognitive Science.
             </p>
             <p>
-              Delving into the intricacies of the human mind while navigating the
-              dynamic world of technology has enabled me to approach problems from
-              multiple angles, blending analytical thinking with an understanding
-              of human-centered design principles.
+              Delving into the intricacies of the human mind while navigating
+              the dynamic world of technology has enabled me to approach
+              problems from multiple angles, blending analytical thinking with
+              an understanding of human-centered design principles.
             </p>
             <p>
               Upon graduating from college, I recognized the transformative
@@ -47,16 +67,17 @@ const IntroPage = () => {
               Summer 2023, I fell in love with climbing. As a novice climber, I
               had little knowledge about climbing techniques and often locked
               myself in awkward body positions where it was impossible for me to
-              generate the next move. I was scared of falling, which prevented me
-              from trying with my full commitment. Yet, with each ascent, climbing
-              became a teacher of resilience, pushing me to confront fears.{" "}
+              generate the next move. I was scared of falling, which prevented
+              me from trying with my full commitment. Yet, with each ascent,
+              climbing became a teacher of resilience, pushing me to confront
+              fears.{" "}
             </p>
             <p>
               In the climbing world, we read routes before we start. But rarely
               can one make perfect decisions based on incomplete information. A
               lot of times, I have to quickly adapt mid-route, learning to
-              re-evaluate my plan and constantly making micro-corrections along my
-              way.
+              re-evaluate my plan and constantly making micro-corrections along
+              my way.
             </p>
             <p>
               The art of climbing originates from the versatility of each
@@ -72,6 +93,8 @@ const IntroPage = () => {
           <img src={ClimbingPhoto} alt="grad-photo" className="grad-photo" />
         </div>
       </div>
+
+      <div ref={mapContainer} className="map-container" />
     </div>
   );
 };

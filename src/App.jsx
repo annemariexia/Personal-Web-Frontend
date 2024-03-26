@@ -6,6 +6,7 @@ import LandingPage from './components/LandingPage'
 import IntroPage from './components/IntroPage'
 import NavBar from './components/NavBar'
 
+
 function App() {
 
   return (
