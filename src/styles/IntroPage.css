@@ -2,9 +2,9 @@
     position: absolute;
     top: 100vh;
     left: 0;
-    background-color: whitesmoke;
+    background-color: white;
     width: 100%;
-    height: 200%;
+    height: 300%;
     display: flex;
     flex-direction: column;
     /* display: grid;
@@ -45,7 +45,7 @@
 
 
 .card-1-2 .education-background>p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     text-align: left;
     margin: 0;
     padding: 0.75rem 0;
@@ -67,9 +67,6 @@
     margin-left: 5rem;
     /* background-color: #213547; */
 }
-
-
-
 
 
 
@@ -97,7 +94,7 @@
 
 
 .card-2-1 .education-background>p {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     text-align: left;
     margin: 0;
     padding: 0.75rem 0;
@@ -117,12 +114,19 @@
     margin-top: 5rem;
     margin-bottom: 0;
     margin-right: 5rem;
-    /* background-color: #213547; */
+    max-height: 30rem;
 }
 
 
-
-.grad-photo {
-    height: 30rem;
-    width: auto;
+.map-container {
+    height: 25rem;
+    width: 25rem;
+    margin: 3rem;
 }
+
+.section {
+	position: relative;
+	background: white;
+	text-align: center;
+}
+

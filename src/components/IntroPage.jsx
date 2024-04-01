@@ -16,21 +16,21 @@ const IntroPage = () => {
     if (map.current) return;
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
-      style: "mapbox://styles/mapbox/streets-v12",
-      center: [-70.9, 42.35],
-      zoom: 9,
+      style: "mapbox://styles/mapbox/light-v11",
+      center: [-73.971252, 40.783058],
+      zoom: 10,
       attributionControl: false,
     });
   });
 
   return (
     <div className="intro-page">
-      <div className="card-1-2">
+      <div className="card-1-2 section">
         <div className="photo-box">
           <img src={GradHeadShot} alt="grad-photo" className="grad-photo" />
         </div>
         <div className="text-box">
-          <h3 className="subtitle">CS and CS: Harmonizing Tech and Thought</h3>
+          <h3 className="subtitle">CS and CS: Harmonizing Technologies and Thoughts</h3>
           <section className="education-background">
             <p>
               I graduated from UC Davis with a BS in Computer Science and
@@ -57,7 +57,8 @@ const IntroPage = () => {
         </div>
       </div>
 
-      <div className="card-2-1">
+
+      <div className="card-2-1 section">
         <div className="text-box">
           <h3 className="subtitle">
             My Bouldering Journey: Resilience, Adaption, Versatility
