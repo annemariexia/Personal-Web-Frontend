@@ -95,7 +95,27 @@ const IntroPage = () => {
         </div>
       </div>
 
-      <div ref={mapContainer} className="map-container" />
+      <div className="card-1-2 section">
+        <div ref={mapContainer} className="map-container photo-box" />
+        <div className="text-box">
+          <h3 className="subtitle">A Cup of Comfort: Café Hopping in NYC</h3>
+          <section className="education-background">
+            <p>
+              Coffee 1
+            </p>
+            <p>
+              Coffee 2
+            </p>
+            <p>
+              Coffee 3 
+            </p>
+            <p>
+              Coffee 4
+            </p>
+          </section>
+        </div>
+      </div>
+
     </div>
   );
 };
