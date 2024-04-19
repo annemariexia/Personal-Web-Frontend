@@ -1,9 +1,9 @@
 import "../styles/IntroPage.css";
 import GradHeadShot from "../assets/grad-photo.jpeg";
-import ClimbingPhoto from "../assets/climbing_3.jpg";
+import ClimbingPhoto from "../assets/climbing_4.jpg";
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl";
-
+import 'mapbox-gl/dist/mapbox-gl.css'
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN;
 
@@ -11,17 +11,61 @@ const IntroPage = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
 
+ 
+  const geojson = {
+    type: "FeatureCollection",
+    features: [
+      {
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [-73.98707, 40.72945],
+        },
+        properties: {
+          title: "Mapbox",
+          description: "La Cabra",
+        },
+      },
+      {
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [-73.98923, 40.73895],
+        },
+        properties: {
+          title: "Mapbox",
+          description: "Devoción",
+        },
+      },
+    ],
+  };
+
 
   useEffect(() => {
     if (map.current) return;
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/light-v11",
-      center: [-73.971252, 40.783058],
-      zoom: 10,
+      center: [-73.993572, 40.729878],
+      zoom: 12,
       attributionControl: false,
+      dragPan: true,
     });
-  });
+
+
+    for (const feature of geojson.features) {
+      new mapboxgl.Marker({ color: '#213547b9'})
+        .setLngLat(feature.geometry.coordinates)
+        .setPopup(
+          new mapboxgl.Popup({ offset: 5 , closeButton: false, anchor: 'top'}) // add popups
+            .setHTML(
+              `<h3>${feature.properties.description}</h3>`
+            )
+        )
+      
+        .addTo(map.current);
+    }
+  }, []);
 
   return (
     <div className="intro-page">
@@ -30,7 +74,9 @@ const IntroPage = () => {
           <img src={GradHeadShot} alt="grad-photo" className="grad-photo" />
         </div>
         <div className="text-box">
-          <h3 className="subtitle">CS and CS: Harmonizing Technologies and Thoughts</h3>
+          <h3 className="subtitle">
+            CS and CS: Harmonizing Technologies and Thoughts
+          </h3>
           <section className="education-background">
             <p>
               I graduated from UC Davis with a BS in Computer Science and
@@ -56,7 +102,6 @@ const IntroPage = () => {
           </section>
         </div>
       </div>
-
 
       <div className="card-2-1 section">
         <div className="text-box">
@@ -100,22 +145,13 @@ const IntroPage = () => {
         <div className="text-box">
           <h3 className="subtitle">A Cup of Comfort: Café Hopping in NYC</h3>
           <section className="education-background">
-            <p>
-              Coffee 1
-            </p>
-            <p>
-              Coffee 2
-            </p>
-            <p>
-              Coffee 3 
-            </p>
-            <p>
-              Coffee 4
-            </p>
+            <p>Coffee 1</p>
+            <p>Coffee 2</p>
+            <p>Coffee 3</p>
+            <p>Coffee 4</p>
           </section>
         </div>
       </div>
-
     </div>
   );
 };
