@@ -12,7 +12,7 @@ const geojson = {
       },
       properties: {
         title: "Mapbox",
-        description: "La Cabra",
+        name: "La Cabra",
         location: "East Village",
         recs: ["hand brew", "cardamon buns"],
         vibes: "cozy, danish design", 
@@ -27,7 +27,7 @@ const geojson = {
       },
       properties: {
         title: "Mapbox",
-        description: "Devoción",
+        name: "Devoción",
         location: "Flatiron",
         recs: ["cold brew"],
         vibes: "chic, breezy, greenery", 
@@ -40,13 +40,13 @@ const geojson = {
 const infoPageContent = [
     {
         imgSrc: GradPhoto,
-        subtitle: "CS and CS: Harmonizing Technologies and Thoughts",
+        subtitle: "Harmonizing Technologies and Thoughts",
         paragraphs: ["I graduated from UC Davis with a BS in Computer Science and Cognitive Science.", " Delving into the intricacies of the human mind while navigating the dynamic world of technology has enabled me to approach problems from multiple angles, blending analytical thinking with an understanding of human-centered design principles.", " Upon graduating from college, I recognized the transformative potential of machine learning decided to continue my academic journey at Columbia University.", " As a fullstack developer, I am driven to bridge the gap between technology and human needs. I believe that by embracing AI technologies and understanding user behavior and psychology, I can create innovative solutions that positively impact people's lives."]
 
     },
     {
         imgSrc: ClimbingPhoto,
-        subtitle: " My Bouldering Journey: Resilience, Adaption, Versatility",
+        subtitle: "Resilience, Adaption, Versatility",
         paragraphs: ["Summer 2023, I fell in love with climbing. As a novice climber, I had little knowledge about climbing techniques and often locked myself in awkward body positions where it was impossible for me to generate the next move. I was scared of falling, which prevented me from trying with my full commitment. Yet, with each ascent, climbing became a teacher of resilience, pushing me to confront fears.", " In the climbing world, we read routes before we start. But rarely can one make perfect decisions based on incomplete information. A lot of times, I have to quickly adapt mid-route, learning to re-evaluate my plan and constantly making micro-corrections along my way.", "The art of climbing originates from the versatility of each climber’s body. We all have different levels of flexibility, heights, or wingspan, which allows for so much variation in everyone’s approach. When I’m off the wall resting, I like to observe how others send the climbs, reflect on other possibilities and refine my own techniques."]
     }
 

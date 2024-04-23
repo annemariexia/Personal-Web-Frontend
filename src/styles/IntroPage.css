@@ -7,7 +7,9 @@
   display: flex;
   flex-direction: column;
   background: linear-gradient(to bottom, rgb(252, 241, 241) 0%, #d8edff 25%, rgb(248, 242, 242) 50% , #c5def5 70% );
+  padding-top: 4rem;
 }
+
 .section {
   position: relative;
   background: white;
@@ -46,13 +48,14 @@
   margin: 0;
 }
 
-.card-1-2 .grad-photo {
+.card-1-2 .info-photo {
   top: 10rem;
   left: 6rem;
   width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card-1-2 .education-background > p {
+.card-1-2 .section-text > p {
   font-size: 1.2rem;
   text-align: left;
   margin: 0;
@@ -63,12 +66,12 @@
   display: flexbox;
   flex-direction: column;
   padding: 0 1rem;
-  margin-top: 7rem;
+  margin-top: 0rem;
   margin-right: 5rem;
 }
 
 .card-1-2 .photo-box {
-  margin-top: 5rem;
+  margin-top: 0rem;
   margin-bottom: 0;
   margin-left: 5rem;
 }
@@ -85,13 +88,14 @@
   margin: 0;
 }
 
-.card-2-1 .grad-photo {
+.card-2-1 .info-photo {
   top: 10rem;
   left: 6rem;
   width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card-2-1 .education-background > p {
+.card-2-1 .section-text > p {
   font-size: 1.2rem;
   text-align: left;
   margin: 0;
@@ -102,15 +106,21 @@
   display: flexbox;
   flex-direction: column;
   padding: 0 1rem;
-  margin-top: 7rem;
+  margin-top: 0rem;
   margin-left: 5rem;
 }
 
 .card-2-1 .photo-box {
-  margin-top: 5rem;
+  margin-top: 0rem;
   margin-bottom: 0;
   margin-right: 5rem;
   max-height: 30rem;
+}
+
+.map-container {
+  left: 1rem;
+  position: relative;
+  margin-left: 4rem;
 }
 
 .mapboxgl-marker {
@@ -127,8 +137,9 @@
   height: 50vh;
   background-color: #213547;
   overflow: hidden;
+  margin-right: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .mapboxgl-popup-tip {
   border-bottom-color: #213547 !important;
@@ -147,3 +158,44 @@
   font-size: 0.75rem;
 }
 
+.map-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.key-words {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0;
+  margin-bottom: 0;
+  gap: 1rem;
+}
+
+.key-words p{
+  margin: 0;
+}
+
+.key-item {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.title {
+  text-align: left;
+  font-size: 1.5rem;
+
+  margin-top: 0rem;
+  margin-bottom: 0;
+}
+
+h4>p {
+  font-weight: 300;
+}
+
+.map-text {
+  text-align: left;
+  width: 90%;
+  margin-top: 0;
+}
