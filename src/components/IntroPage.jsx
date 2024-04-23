@@ -20,8 +20,9 @@ const IntroPage = () => {
     }
     return acc;
   }, { evenContent: [], oddContent: [] });
+
+
   
-  console.log("even:", evenContent);
 
   useEffect(() => {
     if (map.current) return;
@@ -34,6 +35,7 @@ const IntroPage = () => {
       dragPan: true,
     });
 
+
     for (const feature of geojson.features) {
       const marker = new mapboxgl.Marker({ color: "#213547b9" })
         .setLngLat(feature.geometry.coordinates)
@@ -41,14 +43,19 @@ const IntroPage = () => {
           new mapboxgl.Popup({ offset: 5, closeButton: false, anchor: "top" }) // add popups
             .setHTML(`<h3>${feature.properties.description}</h3>`)
         )
-
+  
         .addTo(map.current);
+  
+        marker.getElement().addEventListener("click", () => {        
+          setRenderInfo(structuredClone(feature.properties));
+        });
+      }
 
-      marker.getElement().addEventListener("click", () => {        
-        setRenderInfo(feature.properties);
-      });
-    }
-  }, []);
+  }, [map]);
+
+
+  console.log(renderInfo);
+
 
   return (
     <div className="intro-page">
@@ -61,12 +68,18 @@ const IntroPage = () => {
       <div className="card-1-2 section">
         <div ref={mapContainer} className="map-container photo-box" />
         <div className="text-box">
-          <h3 className="subtitle">A Cup of Comfort: Café Hopping in NYC</h3>
+          <h3 className="subtitle">Café Hopping in NYC</h3>
+          <p>I love coffee. Exploring coffee shops is my favorite thing to do in the city. Of course I jot down thoughts and write some reviews in my notes. On this map, you'll find some of the top cafés I've discovered so far.</p>
           <section className="education-background">
-            <p>Coffee 1</p>
-            <p>Coffee 2</p>
-            <p>Coffee 3</p>
-            <p>Coffee 4</p>
+            {renderInfo && <><h4>{renderInfo.description}</h4>
+            <h4>Location: {renderInfo.location}</h4>
+            <h4>Vibes: {renderInfo.vibes}</h4>
+            <h4>Must try:{renderInfo.recs.map(item => {return <p>{item}</p>})}</h4>
+
+            <p>{renderInfo.text}</p>
+        
+        </>}
+            
           </section>
         </div>
       </div>
