@@ -5,8 +5,6 @@ on:
     branches:
       - main
 
-env:
-  env_var: ${{ vars.VITE_MAPBOXGL_ACCESS_TOKEN }}
 
 jobs:
   build:
@@ -39,6 +37,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
+
+    env:  # Define environment variables
+      VITE_MAPBOXGL_ACCESS_TOKEN: ${{ secrets.VITE_MAPBOXGL_ACCESS_TOKEN }}  # Define VITE_MAPBOXGL_ACCESS_TOKEN as an environment variable
 
     steps:
       - name: Download artifact
