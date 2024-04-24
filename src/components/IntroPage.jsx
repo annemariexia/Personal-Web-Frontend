@@ -7,9 +7,9 @@ import Card from "./Card";
 
 // mapboxgl.accessToken = import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN;
 console.log(import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN);
-mapboxgl.accessToken = process.env.VITE_MAPBOXGL_ACCESS_TOKEN;
+console.log(env.VITE_MAPBOXGL_ACCESS_TOKEN, VITE_MAPBOXGL_ACCESS_TOKEN);
 console.log(process.env.VITE_MAPBOXGL_ACCESS_TOKEN);
-
+mapboxgl.accessToken = process.env.VITE_MAPBOXGL_ACCESS_TOKEN;
 const IntroPage = () => {
   const mapContainer = useRef(null);
   const map = useRef(null);
