@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - main
-
+      
+permissions:
+  contents: write
 
 
 jobs:
@@ -45,6 +47,7 @@ jobs:
         with:
           name: production-files
           path: ./dist
+          branch: gh-pages
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -52,5 +55,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           VITE_MAPBOXGL_ACCESS_TOKEN: ${{ secrets.VITE_MAPBOXGL_ACCESS_TOKEN }}
           publish_dir: ./dist
+        env:   
+          VITE_MAPBOXGL_ACCESS_TOKEN: ${{ secrets.VITE_MAPBOXGL_ACCESS_TOKEN }}
 
 
