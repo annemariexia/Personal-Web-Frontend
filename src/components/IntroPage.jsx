@@ -5,7 +5,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { geojson, infoPageContent } from "../data";
 import Card from "./Card";
 
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN;
+// mapboxgl.accessToken = import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN;
 console.log(import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN);
 mapboxgl.accessToken = process.env.VITE_MAPBOXGL_ACCESS_TOKEN;
 console.log(process.env.VITE_MAPBOXGL_ACCESS_TOKEN);
