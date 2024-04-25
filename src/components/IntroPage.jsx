@@ -67,7 +67,7 @@ const IntroPage = () => {
       <div className="card-1-2 section">
         <div ref={mapContainer} className="map-container" />
         <div className="text-box">
-          <section className="section-text"> 
+          <section className="section-text map-paragraph"> 
             {renderInfo ? (
               <>
               <h4 className="title">{renderInfo.name}</h4>
