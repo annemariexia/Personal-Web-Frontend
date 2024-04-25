@@ -8,9 +8,9 @@ const NavBar = () => {
     return( 
         <nav id="menu-bar">
             <div className="icon-box">
-                <a href="https://www.linkedin.com/in/annemarie-x-xia/"><img src={Linkedin} alt="Linkedin" className="linkedin-icon" /></a>
-                <a href="https://www.instagram.com/anne_climbs/"><img src={Instagram} alt="Instagram" className="instagram-icon" /></a>
-                <a href="https://github.com/annemariexia"><img src={Github} alt="Github" className="github-icon" /></a>
+                <a href="https://www.linkedin.com/in/annemarie-x-xia/"  target="_blank"><img src={Linkedin} alt="Linkedin" className="linkedin-icon" /></a>
+                <a href="https://www.instagram.com/anne_climbs/"  target="_blank"><img src={Instagram} alt="Instagram" className="instagram-icon" /></a>
+                <a href="https://github.com/annemariexia"  target="_blank"><img src={Github} alt="Github" className="github-icon" /></a>
             </div>
             <div id="menuToggle">
             
