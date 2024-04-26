@@ -1,0 +1,142 @@
+.form__group {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  padding: 20vh 35vh;
+  margin-top: 10px;
+  background-color: #213547;
+  top: 0;
+  left: 0;
+  width: 90vw;
+  height: 100vh;
+  gap: 3vh;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 80%;
+  border: 0;
+  border-bottom: 2px solid #9b9b9b;
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding-top: 5vh;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: relative;
+  left: 0vw;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: #9b9b9b;
+  white-space: nowrap;
+  width:0%;
+  background-color: #11998e;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #11998e;
+    font-weight: 700;
+  }
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #11998e, #38ef7d);
+  border-image-slice: 1;
+}
+/* reset input */
+.form__field {
+  &:required,
+  &:invalid {
+    box-shadow: none;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 10vh;
+}
+
+.row #message{
+    margin-top: 2rem;
+
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+textarea::-webkit-scrollbar-button {
+    display: none;
+  }
+  
+textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+textarea::-webkit-scrollbar-thumb {
+    background: #d2d2d2; 
+  }
+  
+
+#email-btn {
+    position: relative;
+    top: 12vh;
+    width: 80%;
+    background-color: #f1eeee;
+}
+
+#email-btn:hover {
+    background-color: rgb(255, 173, 22);
+    color: #fff;
+}
+
+#close-btn {
+    width: 5vh;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 2rem;
+    text-align: center;
+    padding: 8px 0;
+    background-color: rgba(255, 255, 255, 0.219);
+}
+
+#close-btn:hover {
+    border: none;
+    outline: none;
+    color: black;
+}
+
+.close-btn-row {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}

@@ -136,6 +136,11 @@ nav .menu-text a:hover {
   -webkit-touch-callout: none;
 }
 
+
+#menuToggle li{
+  cursor: pointer;
+}
+
 /* hamburger */
 #menuToggle span {
   display: block;

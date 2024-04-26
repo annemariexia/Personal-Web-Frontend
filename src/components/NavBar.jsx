@@ -2,8 +2,16 @@ import "../styles/NavBar.css"
 import Linkedin from "../assets/linkedin-icon.svg"
 import Instagram from "../assets/instagram-icon.svg"
 import Github from "../assets/github-icon.svg"
+import ContactForm from "./ContactForm"
+import { useState } from "react"
 
 const NavBar = () => {
+    
+    const [isVisible, setVisibility] = useState(false);
+    const handleContactClick = () => {
+        console.log("clicked");
+        setVisibility(prevStatus => !prevStatus);
+    }
    
     return( 
         <nav id="menu-bar">
@@ -23,20 +31,11 @@ const NavBar = () => {
                 <a href="#"><li>Home</li></a>
                 <a href="#"><li>About</li></a>
                 <a href="#"><li>Info</li></a>
-                <a href="#"><li>Contact</li></a>
+                <li onClick={handleContactClick}>Contact</li>
                 </ul>
             </div>
-            {/* <div class="menu-item">
-                <div class="menu-text">
-                    <a href="#">About</a>
-                </div>
-                <div class="menu-text">
-                    <a href="#">Blogs</a>
-                </div>
-                <div class="menu-text">
-                    <a href="#">Contact</a>
-                </div>
-            </div> */}
+
+            {isVisible && <ContactForm setVisibility={handleContactClick} /> }    
         </nav>
     )
     
