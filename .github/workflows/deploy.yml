@@ -7,6 +7,7 @@ on:
 
 env:
   VITE_MAPBOXGL_ACCESS_TOKEN: "pk.eyJ1Ijoia2V2aW5ob3UtZXhhZnVuY3Rpb24iLCJhIjoiY2xvaHh4azBtMDJhdTJqbnhsbzhzcGR0MiJ9.hUwrT3MGeUxhGW-TNfmWjw"
+  VITE_CONTACT_EMAIL: "contact.annemariex@gmail.com"
       
 permissions:
   contents: write

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from 'axios'
 import "../styles/ContactForm.css";
 
 const ContactForm = ({ setVisibility }) => {
@@ -13,23 +14,29 @@ const ContactForm = ({ setVisibility }) => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
-    // Send formData to backend
-    fetch("/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        // Handle response
-      })
-      .catch((error) => {
-        // Handle error
+
+    try {
+      // Send formData to backend
+      const response = await fetch("http://localhost:3000/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok.');
+      }
+      console.log(response.statusText);
+    } catch (error) {
+      console.error('There was a problem with your fetch operation:', error);
+    }
+
+
   };
 
   
