@@ -8,6 +8,7 @@ on:
 env:
   VITE_MAPBOXGL_ACCESS_TOKEN: "pk.eyJ1Ijoia2V2aW5ob3UtZXhhZnVuY3Rpb24iLCJhIjoiY2xvaHh4azBtMDJhdTJqbnhsbzhzcGR0MiJ9.hUwrT3MGeUxhGW-TNfmWjw"
   VITE_CONTACT_EMAIL: "contact.annemariex@gmail.com"
+  VITE_CONTACT_PSSW: "anusfoxlgwecmugb"
       
 permissions:
   contents: write
@@ -61,5 +62,7 @@ jobs:
           publish_dir: ./dist
         env:   
           VITE_MAPBOXGL_ACCESS_TOKEN: ${{ secrets.VITE_MAPBOXGL_ACCESS_TOKEN }}
+          VITE_CONTACT_EMAIL: ${{ secrets.VITE_CONTACT_EMAIL }}
+          VITE_CONTACT_PSSW: ${{ secrets.VITE_CONTACT_PSSW }}
 
 
