@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import "../styles/ContactForm.css";
 
 const ContactForm = ({ setVisibility }) => {
+
+  const baseUrl = window.location.origin; 
+  console.log("baseUrl:", baseUrl);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -19,7 +23,7 @@ const ContactForm = ({ setVisibility }) => {
 
     try {
       // Send formData to backend
-      const response = await fetch("https://anne0727.web.app/send-email", {
+      const response = await fetch(`${baseUrl}/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
