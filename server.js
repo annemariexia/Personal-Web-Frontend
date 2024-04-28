@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import cors from 'cors';
 import nodemailer from "nodemailer";
+// import functions from "firebase-functions";
 
 import dotenv from 'dotenv'
 dotenv.config();
@@ -11,6 +12,7 @@ console.log("2:",import.meta.VITE_CONTACT_EMAIL)
 const CONTACT_EMAIL = process.env.VITE_CONTACT_EMAIL;
 const EMAIL_PASSWORD = process.env.VITE_CONTACT_PSSW;
 
+// const functions = require('firebase-functions');
 const app = express();
 
 app.use(bodyParser.json());
@@ -64,3 +66,6 @@ app.post("/send-email", (req, res) => {
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
+
+
+// exports.app = functions.https.onRequest(app);
