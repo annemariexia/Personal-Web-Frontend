@@ -19,7 +19,7 @@ const ContactForm = ({ setVisibility }) => {
 
     try {
       // Send formData to backend
-      const response = await fetch("http://localhost:3000/send-email", {
+      const response = await fetch("https://anne0727.web.app/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
