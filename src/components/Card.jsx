@@ -11,8 +11,8 @@ const Card = ({data, isEven}) => {
          {data.subtitle}
         </h3>
         <section className="section-text">
-          {data.paragraphs.map((paragraph) => {
-            return <p>{paragraph}</p>
+          {data.paragraphs.map((paragraph, index) => {
+            return <p key={index}>{paragraph}</p>
           })}
         </section>
       </div></> : <>
@@ -21,8 +21,8 @@ const Card = ({data, isEven}) => {
          {data.subtitle}
         </h3>
         <section className="section-text">
-          {data.paragraphs.map((paragraph) => {
-            return <p>{paragraph}</p>
+          {data.paragraphs.map((paragraph, index) => {
+            return <p key={index}>{paragraph}</p>
           })}
         </section>
       </div><div className="photo-box">

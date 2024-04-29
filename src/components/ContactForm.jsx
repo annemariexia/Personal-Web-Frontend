@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import "../styles/ContactForm.css";
+import PopUp from "./PopUp";
 
 const ContactForm = ({ setVisibility }) => {
+  const BASE_URL = import.meta.env.VITE_DEV_BACKEND_ENDPOINT;
+  const contact_email = import.meta.env.VITE_CONTACT_EMAIL;
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [isEmailSent, setIsEmailSent] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -20,35 +24,48 @@ const ContactForm = ({ setVisibility }) => {
 
     try {
       // Send formData to backend
-      const response = await fetch("https://us-central1-anne0727.cloudfunctions.net/api/send-email", {
+      const response = await fetch(`${BASE_URL}/send-email`, {
         method: "POST",
-        mode: "no-cors", 
+        body: JSON.stringify(formData),
         headers: {
           "Content-Type": "application/json",
-          'Access-Control-Allow-Origin':'*',
-          "Access-Control-Allow-Methods": "POST",
-          "Access-Control-Allow-Headers": "Content-Type"
         },
-        body: JSON.stringify(formData),
       });
       console.log(response);
       if (!response.ok) {
-        throw new Error('Network response was not ok.');
-      }
-      console.log(response.statusText);
+        throw new Error("Network response was not ok.");
+      } 
+
+      setIsEmailSent(true);
+      console.log(isEmailSent);
+  
     } catch (error) {
-      console.error('There was a problem with your fetch operation:', error);
+      console.error("There was a problem with your fetch operation:", error);
     }
-
-
   };
 
-  
+  console.log(isEmailSent);
 
   return (
     <form class="form__group field" onSubmit={handleSubmit}>
-      <div className="close-btn-row"><button id="close-btn" onClick={setVisibility} type="submit">X</button></div>
-      
+      {isEmailSent ? (
+        <PopUp
+          title="Sent successfully!"
+          message="Your message has been sent. You'll hear back within 2 business days."
+        />
+      ) : (
+        <PopUp
+          title="Error"
+          message={`We can't receive your message. Please try to email us at ${contact_email}`}
+        />
+      )}
+
+      <div className="close-btn-row">
+        <button id="close-btn" onClick={setVisibility} type="submit">
+          X
+        </button>
+      </div>
+
       <div className="row">
         <label for="name" class="form__label">
           Name
@@ -94,9 +111,10 @@ const ContactForm = ({ setVisibility }) => {
         />
         <div id="textarea"></div>
       </div>
-      <button id="email-btn" type="submit">Send Email</button>
+      <button id="email-btn" type="submit">
+        Send Email
+      </button>
     </form>
-    
   );
 };
 

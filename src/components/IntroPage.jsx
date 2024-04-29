@@ -4,6 +4,7 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { geojson, infoPageContent } from "../data";
 import Card from "./Card";
+import PopUp from "./PopUp";
 // import functions from "firebase-functions"
 // const functions = require("firebase-functions");
 
