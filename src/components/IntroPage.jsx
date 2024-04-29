@@ -4,8 +4,11 @@ import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { geojson, infoPageContent } from "../data";
 import Card from "./Card";
+import functions from "firebase-functions"
+// const functions = require("firebase-functions");
 
-mapboxgl.accessToken = import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN;
+// mapboxgl.accessToken = import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN;
+mapboxgl.accessToken = functions.config().env.vite_mapboxgl_access_token;
 
 const IntroPage = () => {
   const mapContainer = useRef(null);

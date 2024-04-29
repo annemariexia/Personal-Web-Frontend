@@ -34,8 +34,12 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-const CONTACT_EMAIL = process.env.VITE_CONTACT_EMAIL;
-const EMAIL_PASSWORD = process.env.VITE_CONTACT_PSSW;
+// const CONTACT_EMAIL = process.env.VITE_CONTACT_EMAIL;
+// const EMAIL_PASSWORD = process.env.VITE_CONTACT_PSSW;
+
+const CONTACT_EMAIL = functions.config().env.vite_contact_email;
+const EMAIL_PASSWORD = functions.config().env.vite_contact_pssw;
+
 
 const app = express();
 
