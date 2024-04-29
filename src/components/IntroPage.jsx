@@ -7,8 +7,7 @@ import Card from "./Card";
 // import functions from "firebase-functions"
 // const functions = require("firebase-functions");
 
-// console.log("token:", functions.config().env.vite_mapboxgl_access_token);
-// console.log("to2:", import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN);
+
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOXGL_ACCESS_TOKEN;
 // mapboxgl.accessToken = functions.config().env.vite_mapboxgl_access_token;
 

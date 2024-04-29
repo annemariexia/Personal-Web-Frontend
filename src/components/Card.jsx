@@ -2,7 +2,6 @@
 import React from "react";
 
 const Card = ({data, isEven}) => {
-    console.log(data.imgSrc);
   return (
     <> {isEven ?  <><div className="photo-box">
         <img src={data.imgSrc} alt="grad-photo" className="info-photo" />
