@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 300%;
-  display: grid;
+  display: flex;
   flex-direction: column;
   background: linear-gradient(to bottom, rgb(252, 241, 241) 0%, #d8edff 25%, rgb(248, 242, 242) 50% , #c5def5 70% );
   padding-top: 4rem;
@@ -28,6 +28,7 @@
 
 }
 
+
 .card-2-1 {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -50,7 +51,9 @@
 }
 
 .card-1-2 .info-photo {
-  height: 55vh;
+  max-width: 80%;
+  max-height: 80%;
+  height: auto;
   top: 10rem;
   left: 6rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -80,6 +83,45 @@
   margin-top: 0rem;
   margin-bottom: 0;
   margin-left: 5rem;
+  margin-top: 4vh;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .card-1-2 {
+    grid-template-columns: 2fr 2fr; /* Change to a single column layout */
+    grid-template-rows: 1fr;
+  }
+
+}
+
+@media screen and (max-width: 1150px) {
+  .card-1-2 {
+    grid-template-columns: 2fr 4fr; /* Change to a single column layout */
+    grid-template-rows: 1fr;
+  }
+
+  .card-1-2 .section-text > p{
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 0.5rem;
+  }
+
+  .card-1-2 .subtitle {
+    color: #213547;
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+  }
+
+}
+
+@media screen and (min-width: 1400px) {
+  .card-1-2 {
+    height: 55vh;
+  }
+
 }
 
 .card-2-1 .intro-title {
@@ -95,15 +137,16 @@
 }
 
 .card-2-1 .info-photo {
-  height: 55vh;
-  /* top: 10rem;
-  left: 6rem; */
+  max-width: 80%;
+  max-height: 80%;
+  height: auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-top: 4vh;
   position: relative;
-  right: 4vh;
+  right: 0vh;
   top: 4vh;
 }
+
 
 .card-2-1 .section-text > p {
   font-size: 1.2rem;
@@ -128,7 +171,54 @@
   margin-top: 0rem;
   margin-bottom: 0;
   margin-right: 5rem;
+  margin-top: 4vh;
   /* max-height: 30rem; */
+}
+
+@media screen and (max-width: 1200px) {
+  .card-2-1 {
+    grid-template-columns: 2fr 2fr; /* Change to a single column layout */
+  }
+
+}
+
+@media screen and (max-width: 1150px) {
+  .card-2-1 {
+    grid-template-columns: 4fr 2fr; /* Change to a single column layout */
+  }
+
+  .card-2-1 .section-text {
+    padding-right: 2vw;
+    position: relative;
+    right: 5vw;
+  }
+
+  .card-2-1 .section-text > p{
+    font-size: 14px;
+    font-weight: 400;
+    padding-top: 0.5rem;
+  }
+
+  .card-2-1 .subtitle {
+    color: #213547;
+    font-size: 1.2rem;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    padding-right: 2vw;
+    position: relative;
+    right: 5vw;
+  }
+
+}
+
+@media screen and (min-width: 1400px) {
+  .card-2-1 {
+    height: 55vh;
+    position: relative;
+    top: 12vh;
+  }
+
 }
 
 .map-container {

@@ -3,7 +3,7 @@ import "../styles/ContactForm.css";
 import PopUp from "./PopUp";
 
 const ContactForm = ({ setVisibility }) => {
-  const BASE_URL = import.meta.env.VITE_DEV_BACKEND_ENDPOINT;
+  const BASE_URL = import.meta.env.VITE_PROD_BACKEND_ENDPOINT;
   const contact_email = import.meta.env.VITE_CONTACT_EMAIL;
 
   const [formData, setFormData] = useState({
