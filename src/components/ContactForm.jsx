@@ -3,10 +3,10 @@ import "../styles/ContactForm.css";
 import PopUp from "./PopUp";
 
 const ContactForm = ({ setVisibility }) => {
-  const BASE_URL = import.meta.env.VITE_PROD_BACKEND_ENDPOINT;
+  const baseURL = import.meta.env.VITE_PROD_BACKEND_ENDPOINT;
   const contact_email = import.meta.env.VITE_CONTACT_EMAIL;
 
-  console.log(BASE_URL);
+  console.log("base:",baseURL);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -26,7 +26,7 @@ const ContactForm = ({ setVisibility }) => {
 
     try {
       // Send formData to backend
-      const response = await fetch(`${BASE_URL}/send-email`, {
+      const response = await fetch(`${baseURL}/send-email`, {
         method: "POST",
         body: JSON.stringify(formData),
         headers: {
