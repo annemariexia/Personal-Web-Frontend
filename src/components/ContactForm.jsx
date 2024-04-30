@@ -53,12 +53,14 @@ const ContactForm = ({ setVisibility }) => {
         <PopUp
           title="Sent successfully!"
           message="Your message has been sent. You'll hear back within 2 business days."
+          setIsEmailSent={setIsEmailSent}
         />
       )}
       {isEmailSent === false && (
         <PopUp
           title="Error"
           message={`We can't receive your message. Please try to email us at ${contact_email}`}
+          setIsEmailSent={setIsEmailSent}
         />
       )}
 
