@@ -11,7 +11,7 @@ const ContactForm = ({ setVisibility }) => {
     email: "",
     message: "",
   });
-  const [isEmailSent, setIsEmailSent] = useState(false);
+  const [isEmailSent, setIsEmailSent] = useState(undefined);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,6 +40,7 @@ const ContactForm = ({ setVisibility }) => {
       console.log(isEmailSent);
   
     } catch (error) {
+      setIsEmailSent(false);
       console.error("There was a problem with your fetch operation:", error);
     }
   };
@@ -48,12 +49,13 @@ const ContactForm = ({ setVisibility }) => {
 
   return (
     <form class="form__group field" onSubmit={handleSubmit}>
-      {isEmailSent ? (
+      {isEmailSent === true && (
         <PopUp
           title="Sent successfully!"
           message="Your message has been sent. You'll hear back within 2 business days."
         />
-      ) : (
+      )}
+      {isEmailSent === false && (
         <PopUp
           title="Error"
           message={`We can't receive your message. Please try to email us at ${contact_email}`}
