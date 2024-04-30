@@ -6,6 +6,8 @@ const ContactForm = ({ setVisibility }) => {
   const BASE_URL = import.meta.env.VITE_PROD_BACKEND_ENDPOINT;
   const contact_email = import.meta.env.VITE_CONTACT_EMAIL;
 
+  console.log(BASE_URL);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
