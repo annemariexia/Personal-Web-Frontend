@@ -308,13 +308,11 @@ h4>p {
 }
 
 section.map-paragraph {
-  top: 20vh;
+  top: 40vh;
   left: 5vw;
   position: relative;
 }
-/* section.map-paragraph {
-  top: 0vh;
-  width: 50%;
-  left: 3vw;
-  text-align: left;
-} */
+
+div.map-container {
+  top: 45vh;
+}
