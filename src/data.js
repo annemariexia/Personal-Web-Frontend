@@ -31,7 +31,7 @@ const geojson = {
         location: "Flatiron",
         recs: ["cold brew"],
         vibes: "chic, breezy, greenery", 
-        text: "Devoción sits in one of the most historical location in Flatiron. Their coffee shop was onced an artist's studio in its original exposed bricks. Unlike months-old coffee you drink at most chain coffee shops, Devoción brings the freshest coffee cherries possible from Colombua and sends them directly to their roaster in Brooklyn.",
+        text: "Devoción sits in one of the most historical location in Flatiron. Their coffee shop was onced an artist's studio in its original exposed bricks. Unlike months-old coffee you drink at most chain coffee shops, Devoción brings the freshest coffee cherries possible from Colombia and sends them directly to their roaster in Brooklyn.",
       },
     },
     {
