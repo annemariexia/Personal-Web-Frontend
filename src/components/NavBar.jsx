@@ -7,10 +7,16 @@ import { useState } from "react"
 
 const NavBar = () => {
     
-    const [isVisible, setVisibility] = useState(false);
+    const [isContactFormVisible, setVisibility] = useState(false);
     const handleContactClick = () => {
-        console.log("clicked");
         setVisibility(prevStatus => !prevStatus);
+    }
+
+    const handleHomeClick = () => {
+        if (isContactFormVisible) {
+            setVisibility(prevStatus => !prevStatus);
+        }
+        
     }
    
     return( 
@@ -21,21 +27,18 @@ const NavBar = () => {
                 <a href="https://github.com/annemariexia"  target="_blank"><img src={Github} alt="Github" className="github-icon" /></a>
             </div>
             <div id="menuToggle">
-            
                 <input type="checkbox" />
                 <span></span>
                 <span></span>
                 <span></span>
                 
                 <ul id="menu">
-                <a href="#"><li>Home</li></a>
-                <a href="#"><li>About</li></a>
-                <a href="#"><li>Info</li></a>
-                <li onClick={handleContactClick}>Contact</li>
+                <a href="#"><li onClick={handleHomeClick}>Home</li></a>
+                <a><li onClick={handleContactClick}>Contact</li></a>
                 </ul>
             </div>
 
-            {isVisible && <ContactForm setVisibility={handleContactClick} /> }    
+            {isContactFormVisible && <ContactForm setVisibility={handleContactClick} /> }    
         </nav>
     )
     

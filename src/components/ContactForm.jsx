@@ -14,6 +14,7 @@ const ContactForm = ({ setVisibility }) => {
     message: "",
   });
   const [isEmailSent, setIsEmailSent] = useState(undefined);
+  const [errMsg, setErrMsg] = useState(`We can't receive your message. Please try to email us at ${contact_email}`);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,13 +34,19 @@ const ContactForm = ({ setVisibility }) => {
           "Content-Type": "application/json",
         },
       });
-      console.log(response);
+
+      
+      if (response.status === 429) {
+        setIsEmailSent(false);
+        setErrMsg("Too many requests, please try again later.");
+        return;
+        
+      }
       if (!response.ok) {
         throw new Error("Network response was not ok.");
       } 
 
       setIsEmailSent(true);
-      console.log(isEmailSent);
   
     } catch (error) {
       setIsEmailSent(false);
@@ -47,7 +54,6 @@ const ContactForm = ({ setVisibility }) => {
     }
   };
 
-  console.log(isEmailSent);
 
   return (
     <form class="form__group field" onSubmit={handleSubmit}>
@@ -61,7 +67,7 @@ const ContactForm = ({ setVisibility }) => {
       {isEmailSent === false && (
         <PopUp
           title="Error"
-          message={`We can't receive your message. Please try to email us at ${contact_email}`}
+          message={errMsg}
           setIsEmailSent={setIsEmailSent}
         />
       )}
