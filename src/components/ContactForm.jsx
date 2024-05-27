@@ -6,7 +6,7 @@ const ContactForm = ({ setVisibility }) => {
   const baseURL = import.meta.env.VITE_PROD_BACKEND_ENDPOINT;
   const contact_email = import.meta.env.VITE_CONTACT_EMAIL;
 
-  console.log("base:",baseURL);
+  console.log("base:", baseURL);
 
   const [formData, setFormData] = useState({
     name: "",
@@ -14,7 +14,10 @@ const ContactForm = ({ setVisibility }) => {
     message: "",
   });
   const [isEmailSent, setIsEmailSent] = useState(undefined);
-  const [errMsg, setErrMsg] = useState(`We can't receive your message. Please try to email us at ${contact_email}`);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errMsg, setErrMsg] = useState(
+    `We can't receive your message. Please try to email us at ${contact_email}`
+  );
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,38 +25,38 @@ const ContactForm = ({ setVisibility }) => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(formData);
+    if (!isSubmitting) {
+      e.preventDefault();
+      setIsSubmitting(true);
 
-    try {
-      // Send formData to backend
-      const response = await fetch(`${baseURL}/send-email`, {
-        method: "POST",
-        body: JSON.stringify(formData),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      try {
+        // Send formData to backend
+        const response = await fetch(`${baseURL}/send-email`, {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
 
-      
-      if (response.status === 429) {
+        if (response.status === 429) {
+          setIsEmailSent(false);
+          setErrMsg("Too many requests, please try again later.");
+          return;
+        }
+        if (!response.ok) {
+          throw new Error("Network response was not ok.");
+        }
+
+        setIsEmailSent(true);
+      } catch (error) {
         setIsEmailSent(false);
-        setErrMsg("Too many requests, please try again later.");
-        return;
-        
+        console.error("There was a problem with your fetch operation:", error);
+      } finally {
+        setIsSubmitting(false);
       }
-      if (!response.ok) {
-        throw new Error("Network response was not ok.");
-      } 
-
-      setIsEmailSent(true);
-  
-    } catch (error) {
-      setIsEmailSent(false);
-      console.error("There was a problem with your fetch operation:", error);
     }
   };
-
 
   return (
     <form class="form__group field" onSubmit={handleSubmit}>
@@ -65,11 +68,7 @@ const ContactForm = ({ setVisibility }) => {
         />
       )}
       {isEmailSent === false && (
-        <PopUp
-          title="Error"
-          message={errMsg}
-          setIsEmailSent={setIsEmailSent}
-        />
+        <PopUp title="Error" message={errMsg} setIsEmailSent={setIsEmailSent} />
       )}
 
       <div className="close-btn-row">
@@ -124,7 +123,13 @@ const ContactForm = ({ setVisibility }) => {
         <div id="textarea"></div>
       </div>
       <button id="email-btn" type="submit">
-        Send Email
+        {isSubmitting ? (
+          <>
+            <div class="loader"></div>
+          </>
+        ) : (
+          "Send Email"
+        )}
       </button>
     </form>
   );
